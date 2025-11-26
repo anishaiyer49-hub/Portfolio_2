@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("whimsy.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 20;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Borders */
+.border {
+    position: fixed;
+    pointer-events: none;
+}
+
+.border.top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.border.bottom {
+    bottom: 100;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.border.left {
+    top: 0;
+    left: 50;
+    height: vh;
+    width: auto;
+}
+
+.border.right {
+    top: 0;
+    right: 5;
+    height: 120vh;
+    width: auto;
+}
+
+
+.title {
+    font-family: "Monsieur La Doulaise", cursive;
+    font-size: 100px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #342b2b;
+}
+
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+    color: hsl(305, 9%, 50%);
+    
+    
+}
+
+/* Spin animation */
+@keyframes spinOnce {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin-inner {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.spin-on-load {
+    animation: spinOnce 1.5s ease-in-out;
+    transform-origin: center;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+
+
+
